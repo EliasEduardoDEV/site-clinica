@@ -1,132 +1,172 @@
 html, body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  body {
-    background-color: #f1f1f1;
-    display: flex;
-    justify-content: center;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  background-color: #e0f7fa; /* Cor mais suave para o fundo */
+}
+
+/* Classe de div flexível para telas diferentes (responsiva) */
+.responsive-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha em telas pequenas */
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
   .wrapper {
-    width: 1200px;
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto;
-    background-color: #e0f7fa; /* Cor mais suave para o fundo */
+    width: 100%;  /* Ajuste a largura para 100% em telas pequenas */
   }
-  
-  .main {
-    display: flex;
-    flex-flow: column;
-    width: 85%;
-  }
-  
   .menu {
-    width: 15%;
-    background-color: #00796b; /* Cor mais escura para o menu */
-    padding: 10px 20px 0;
+    width: 100%;  /* O menu também ficará em 100% em telas menores */
   }
-  
-  .menu ul {
-    list-style-type: none;
-    padding: 0;
+  .main {
+    width: 100%;  /* A seção principal ocupará toda a largura */
   }
-  
-  .menu li {
-    margin-bottom: 15px;
-  }
-  
-  .menu a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    display: block;
-  }
-  
-  .header {
-    background-color: #004d40; /* Cor escura para o header */
-    min-height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-  }
-  
-  .header img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .content {
-    background-color: white;
-    min-height: 300px;
-    padding: 20px;
-  }
-  
-  .footer {
-    background-color: #673ab7; /* Alteração da cor do footer */
-    min-height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  table, th, td {
-    border: 1px solid #ddd;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #00796b;
-    color: white;
-  }
-  
-  iframe {
-    width: 100%;
-    height: 300px;
-    border: none;
-    margin-top: 20px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  form label, form input, form textarea {
-    margin-bottom: 10px;
-  }
-  
-  form input, form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  form button {
-    padding: 10px 15px;
-    border: none;
-    background-color: #00796b;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  form button:hover {
-    background-color: #004d40;
-  }
-  
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  width: 85%;
+}
+
+.menu {
+  width: 15%;
+  background-color: #00796b; /* Cor mais escura para o menu */
+  padding: 10px 20px 0;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu li {
+  margin-bottom: 15px;
+}
+
+/* Trocando a cor do texto de link e retirando o sublinhado */
+.menu a {
+  text-decoration: none; /* Remove o sublinhado */
+  color: #004d40; /* Cor do texto do link */
+  font-size: 18px;
+  display: block;
+}
+
+.menu a:hover {
+  color: #ffffff; /* Cor do texto ao passar o mouse */
+}
+
+.header {
+  background-color: #004d40; /* Cor escura para o header */
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.header img {
+  max-width: 100%;
+  height: auto;
+}
+
+.content {
+  background-color: white;
+  min-height: 300px;
+  padding: 20px;
+}
+
+/* Classe de div com figura de background fixa */
+.background-fixed {
+  background-image: url('caminho/para/imagem.jpg');
+  background-attachment: fixed; /* Faz o fundo ficar fixo enquanto a página rola */
+  background-size: cover; /* Faz o fundo cobrir toda a área da div */
+  background-position: center; /* Centraliza a imagem */
+  height: 400px; /* Define uma altura para a div */
+}
+
+.footer {
+  background-color: #673ab7; /* Alteração da cor do footer */
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #00796b;
+  color: white;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label, form input, form textarea {
+  margin-bottom: 10px;
+}
+
+form input, form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+form button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #088b7e;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+form button:hover {
+  background-color: #056353a1;
+}
+
+/* Classe de div com bordas arredondadas */
+.bordered-div {
+  border: 2px solid #00796b; /* Cor da borda */
+  border-radius: 15px; /* Bordas arredondadas */
+  padding: 20px;
+}
